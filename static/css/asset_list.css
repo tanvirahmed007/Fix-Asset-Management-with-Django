@@ -1,0 +1,44 @@
+/* 
+
+.list_content{
+    
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 3%;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    
+}
+
+.list_item{
+    width: 80%;
+}
+
+.status{
+    margin-left: auto;
+    width: 10%;
+}
+
+.list_details{
+    display: flex;
+    align-items: center;
+    
+
+}
+
+.list_title, .list_value{
+    padding-inline: 10px;
+}
+
+.list_title{
+    font-weight: 600;
+    font-size: 20px;
+} */
+
+th{
+    padding-inline: 10px;
+}
+td{
+    border: 0.5px solid #000;
+    text-align: center;
+}

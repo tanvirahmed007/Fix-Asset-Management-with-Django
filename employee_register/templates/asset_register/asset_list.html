@@ -2,12 +2,32 @@
 
 {% block content %}
 
-<table class="table table-borderless">
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/asset_list.css' %}">
+
+
+
+<table class="table ">
     <thead class="border-bottom font-weight-bold">
         <tr>
-            <th>Full Name</th>
-            <th>Mobile</th>
+            <th>Year Of purchase</th>
+            <th>Historical Cost</th>
+            <th>Purchase Order</th>
+            <th>User</th>
+            <th>Location</th>
+            <th>Specification</th>
+            <th>Rate</th>
+            <th>Accumulated Balance</th>
+            <th>Book Value</th>
+
+
+
             <th>Position</th>
+            <th>Main value</th>
+            <th>Service of Year</th>
+            <th>From Year</th>
+            <th>Depreciation Value</th>
             <th>
                 <a href="{% url 'asset_insert' %}" class="btn btn-success">
                     <i class="fas fa-plus"></i>
@@ -15,14 +35,31 @@
                 </a>
             </th>
 
+
+
         </tr>
     </thead>
     <tbody>
         {% for employee in asset_list %}
         <tr>
-            <td>{{ employee.fullname }}</td>
-            <td>{{ employee.mobile }}</td>
+
+            <td>{{ employee.year_of_purchase }}</td>
+            <td>{{ employee.historical_cost }}</td>
+            <td>{{ employee.purchase_order }}</td>
+            <td>{{ employee.user }}</td>
+            <td>{{ employee.location }}</td>
+            <td>{{ employee.specification }}</td>
+            <td>{{ employee.rate }}</td>
+            <td>{{ employee.accumulated_balance }}</td>
+            <td>{{ employee.book_value }}</td>
+
+
+
             <td>{{ employee.position }}</td>
+            <td>{{ employee.bookValue }}</td>
+            <td>{{ employee.service }}</td>
+            <td>{{ employee.fromYear }}</td>
+            <td>{{ employee.result }}</td>
             <td>
                 <a href="{% url 'asset_update' employee.id %}"
                     class="btn text-secondary px-0">
