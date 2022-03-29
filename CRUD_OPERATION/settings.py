@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dgr_4*-%spqrpx+gbzjkp0e!qg@peme022fn-$j5ic36o@zc+m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['fixassetmanagement.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['fixassetmanagement.herokuapp.com']
 
 
 # Application definition
@@ -47,7 +48,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,19 +81,14 @@ WSGI_APPLICATION = 'CRUD_OPERATION.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'FixAssetManagement',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'tanvir9909',
-    #     'HOST': 'localhost',
-        
-    # }
-
-    # new
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'de41jd8c9skpil',
+        'USER': 'bvkymrzsyzcnsh',
+        'PASSWORD': '4126bd81101cd9603cf286a3d2ec3a7dff91b339c0e223a098d33cb7c3cac079',
+        'HOST': 'ec2-54-160-109-68.compute-1.amazonaws.com',
+        'PORT': '5432',
+        
     }
 }
 
