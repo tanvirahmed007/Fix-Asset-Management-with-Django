@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-dgr_4*-%spqrpx+gbzjkp0e!qg@peme022fn-$j5ic36o@zc+m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fixassetmanagement.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -80,13 +80,19 @@ WSGI_APPLICATION = 'CRUD_OPERATION.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'FixAssetManagement',
-        'USER': 'postgres',
-        'PASSWORD': 'tanvir9909',
-        'HOST': 'localhost',
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'FixAssetManagement',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'tanvir9909',
+    #     'HOST': 'localhost',
         
+    # }
+
+    # new
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
